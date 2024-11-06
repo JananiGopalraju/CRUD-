@@ -8,7 +8,9 @@ dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 app.use(express.json());
-app.use(cors);
+app.use(cors());
+
+app.use(express.urlencoded({ extended: true }));
 
 // MongoDB connection
 const uri = process.env.MONGODB_URI;
