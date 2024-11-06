@@ -8,11 +8,7 @@ dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: 'https://crud-eosin-six.vercel.app/', // Replace with her actual frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors);
 
 // MongoDB connection
 const uri = process.env.MONGODB_URI;
